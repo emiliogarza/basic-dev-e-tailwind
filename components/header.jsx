@@ -1,7 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import netlifyLogo from 'public/netlify-logo.svg';
-import githubLogo from 'public/images/github-mark-white.svg';
+
+import {
+    ArrowUpRightIcon,
+  } from '@heroicons/react/24/outline'
 
 const navItems = [
     { linkText: 'Home', href: '/' },
@@ -15,10 +17,9 @@ const navItems = [
 export function Header() {
     return (
         <nav className="flex flex-wrap items-center gap-4 pt-6 pb-12 sm:pt-12 md:pb-24">
-            <Link href="/">
-                <Image src={netlifyLogo} alt="Netlify logo" />
-            </Link>
-            {!!navItems?.length && (
+            <h2>BEYOND Resources</h2>
+                {/* <Image src={netlifyLogo} alt="Netlify logo" /> */}
+            {/* {!!navItems?.length && (
                 <ul className="flex flex-wrap gap-x-4 gap-y-1">
                     {navItems.map((item, index) => (
                         <li key={index}>
@@ -31,14 +32,14 @@ export function Header() {
                         </li>
                     ))}
                 </ul>
-            )}
+            )} */}
             <div className="flex-grow justify-end hidden lg:flex lg:mr-1">
                 <Link
-                    href="https://github.com/netlify-templates/next-platform-starter"
+                    href="https://equipandengage.org"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    <Image src={githubLogo} alt="GitHub logo" className="w-7" />
+                    <ArrowUpRightIcon className="h-6 w-6" aria-hidden="true" />
                 </Link>
             </div>
         </nav>
