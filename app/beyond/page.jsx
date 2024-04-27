@@ -18,7 +18,8 @@ import {
     GlobeAsiaAustraliaIcon,
     EnvelopeIcon,
     QuestionMarkCircleIcon,
-    ComputerDesktopIcon
+    ComputerDesktopIcon,
+    CameraIcon
   } from '@heroicons/react/24/outline'
 import { ActionCards } from 'components/action-cards';
 
@@ -86,6 +87,14 @@ const schedulingActions = [
 
 const sopActions = [
     {
+        title: 'Church Photography Handbook',
+        description: 'Example Photography Guide to teach photographers',
+        href: 'https://www.dropbox.com/scl/fi/od92cvdo065uwbnselhcb/Photography-Handbook-Updated-2023.10.15-compressed.pdf?rlkey=xv8qro6notk5zdoni5lzg7gzh&dl=0',
+        icon: CameraIcon,
+        iconForeground: 'text-yellow-700',
+        iconBackground: 'bg-yellow-50',
+    },
+    {
         title: 'Basic Job Description Example',
         description: 'Here is an example of a basic media tech volunteer job description',
         href: 'https://docs.google.com/document/d/1knk1VI6-8UiwoDnndLhejPP-OvnaYcNa-mnb_X4Ekz8/edit?usp=sharing',
@@ -109,14 +118,7 @@ const sopActions = [
         iconForeground: 'text-sky-700',
         iconBackground: 'bg-sky-50',
     },
-    // {
-    //     title: 'Payroll',
-    //     description: 'Testing',
-    //     href: '#',
-    //     icon: BanknotesIcon,
-    //     iconForeground: 'text-yellow-700',
-    //     iconBackground: 'bg-yellow-50',
-    // },
+
     // {
     //     title: 'Submit an expense',
     //     description: 'Testing',
