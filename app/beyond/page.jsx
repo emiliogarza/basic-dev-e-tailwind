@@ -19,12 +19,47 @@ import {
     EnvelopeIcon,
     QuestionMarkCircleIcon,
     ComputerDesktopIcon,
-    CameraIcon
+    CameraIcon,
+    PlayIcon
   } from '@heroicons/react/24/outline'
 import { ActionCards } from 'components/action-cards';
 
+const tipsTricks = [
+    {
+        title: 'Exposure Triangle',
+        description: 'Understanding Exposure: The Exposure Triangle with Mark Wallace',
+        href: 'https://www.youtube.com/watch?v=3eVjUrY9a9c',
+        icon: PlayIcon,
+        iconForeground: 'text-purple-700',
+        iconBackground: 'bg-rose-50',
+    },
+    {
+        title: '5 Tips for Church Photography',
+        description: 'How To Take Photos At Church - 5 Tips for Church Photography Omar Eltakrori',
+        href: 'https://www.youtube.com/watch?v=q0h_yjcehhk',
+        icon: PlayIcon,
+        iconForeground: 'text-sky-700',
+        iconBackground: 'bg-sky-50',
+    },
+    {
+        title: 'Best Settings for Church Photography',
+        description: ' Best Settings for Church Photography - Behind The Scenes Tutorial - Omar Eltakrori',
+        href: 'https://www.youtube.com/watch?v=gTZpv0DBwIE',
+        icon: PlayIcon,
+        iconForeground: 'text-indigo-700',
+        iconBackground: 'bg-indigo-50',
+    }
+]
 
 const schedulingActions = [
+    {
+        title: 'Smug Mug',
+        description: 'Photo Management',
+        href: 'https://www.smugmug.com/',
+        icon: DevicePhoneMobileIcon,
+        iconForeground: 'text-purple-700',
+        iconBackground: 'bg-rose-50',
+    },
     {
         title: 'Planning Center',
         description: 'Planning Center is a set of software tools to help you organize information, coordinate events, communicate with your team, and connect with your congregation.',
@@ -192,8 +227,11 @@ const digitalEngagementPlatforms = [
 
 export default function Page() {
     return (
-        <div>            
-            <h1>Scheduling Tools</h1>
+        <div>
+            <h1>Tips and Tricks</h1>
+            <ActionCards actions={tipsTricks}></ActionCards>
+
+            <h1 className='mt-12'>Productivity Tools</h1>
             <ActionCards actions={schedulingActions} />
 
             <h1 className='mt-12'>Standard Operating Procedures Examples</h1>
