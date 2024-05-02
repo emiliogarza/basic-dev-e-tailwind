@@ -122,6 +122,14 @@ const schedulingActions = [
 
 const sopActions = [
     {
+        title: 'Your Church and Media',
+        description: 'Building an effective media ministry',
+        href: 'https://drive.google.com/file/d/1_fmyhITSi7F3mbcSW7Z_W7UFbaNF2Qq3/view?usp=sharing',
+        icon: DocumentIcon,
+        iconForeground: 'text-teal-700',
+        iconBackground: 'bg-teal-50',
+    },
+    {
         title: 'Church Photography Handbook',
         description: 'Example Photography Guide to teach photographers',
         href: 'https://www.dropbox.com/scl/fi/od92cvdo065uwbnselhcb/Photography-Handbook-Updated-2023.10.15-compressed.pdf?rlkey=xv8qro6notk5zdoni5lzg7gzh&dl=0',
