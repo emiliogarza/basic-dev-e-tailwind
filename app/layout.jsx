@@ -5,7 +5,7 @@ import { Header } from '../components/header';
 export const metadata = {
     title: {
         template: '%s',
-        default: 'BEYOND Resources'
+        default: 'Emilio Garza | Developer from California.'
     }
 };
 
