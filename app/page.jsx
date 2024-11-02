@@ -1,33 +1,29 @@
 import Link from 'next/link';
-import { Card } from 'components/card';
-import { RandomQuote } from 'components/random-quote';
-import { Markdown } from 'components/markdown';
-import { ContextAlert } from 'components/context-alert';
-import { getNetlifyContext } from 'utils';
-import {
-    AcademicCapIcon,
-    BanknotesIcon,
-    CheckBadgeIcon,
-    ClipboardDocumentListIcon,
-    ReceiptRefundIcon,
-    UsersIcon,
-    DocumentIcon,
-    FlagIcon,
-    DevicePhoneMobileIcon,
-    SparklesIcon,
-    GlobeAsiaAustraliaIcon,
-    EnvelopeIcon,
-    QuestionMarkCircleIcon,
-    ComputerDesktopIcon
-  } from '@heroicons/react/24/outline'
-import { ActionCards } from 'components/action-cards';
-
+import Image from 'next/image';
 
 
 export default function Page() {
     return (
-        <div>            
-            <h1>Click for <Link href="/beyond">BEYOND RESOURCES</Link></h1>
+      <div>
+        <div className="card img">
+          <Image
+            src="/images/me1.jpg"
+            priority
+            height={500}
+              width={500}
+              alt="Emilio Garza"
+          />
+          <p>My name is Emilio Garza. Senior Software Engineer from Northern California.</p>
         </div>
+        <div class="blog-posts">
+          <h3 class="blog-posts-heading">Rants</h3>
+          <Link href="/blog/test" class="blogLink">
+                <div class="card card--with-link">
+                    <h2>Hello World!</h2>
+                    <p>Just want to test stuff out for fun...</p>
+                </div>
+            </Link>
+        </div>
+      </div>
       )
 }

@@ -15,22 +15,286 @@
     }
 }
 
-a {
-    @apply underline
+/*
+ * Border-box FTW https://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * Fluid Fonts are cool: https://www.smashingmagazine.com/2016/05/fluid-typography/
+ */
+ html {
+    font-family: 'Arial Rounded MT Bold',sans-serif;
+    font-size: calc( 14px + 8 * ((100vw - 375px) / 1280));
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-.markdown {
-    @apply mb-1;
+*, *:before, *:after {
+    box-sizing: inherit;
 }
 
-.alert .markdown {
-    @apply mb-0;
+body {
+    margin: 0;
+    text-align: center;
+    color: #4c4c4c;
 }
 
-.markdown p {
-    @apply mb-3;
+h1,
+h2,
+h3,
+h4,
+p {
+    margin: 0;
 }
 
-.btn:disabled {
-    @apply text-neutral-400 bg-neutral-700;
+.centered-layout-container {
+    max-width: 600px;
 }
+
+@media (max-width: 767px) {
+    .centered-layout-container {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+}
+
+/* Blog Stuff */
+
+.blog-posts-heading {
+    text-align: left;
+}
+
+.blog-intro-title {
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #4c4c4c;
+}
+
+.blog-intro-subtitle {
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    padding-left: 20px;
+}
+
+.blog-intro-subtitle:before {
+    content: '>';
+    position: absolute;
+    left: 0;
+}
+
+.blog p,
+.blog h2,
+.blog h3 {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+pre code {
+    background-color: #eee;
+    border: 1px solid #999;
+    display: block;
+    padding: 20px;
+}
+
+/*
+ * Colors I think I'm going to use
+ * ===============================
+ * Dark Brown   : #5E412F
+ * Preachyness  : #FCEBB6
+ * Tealish      : #78C0A8
+ * Bold Orange  : #F07818
+ * Light Orange : #F0A830
+ * Light Gray   : #f2f2f2
+ * Dark Gray    : #4c4c4c
+ */
+
+
+/*
+ * Accessibility CSS
+ * =================
+ */
+.skippy {
+    color: white;
+    left: 0px;
+    overflow: hidden;
+    position: absolute;
+    top: -40px;
+    transition: top 1s ease-out, background 1s linear;
+}
+
+.skippy:focus {
+    color: #5E412F;
+    left: 0px;
+    overflow: visible;
+    position: absolute;
+    top: 0px;
+    transition: top .1s ease-in, background .5s linear;
+}
+
+.visually-hidden {
+    position: absolute;
+    left: -500px;
+    top: -500px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+/*
+ * Headings
+ * ========
+ */
+h1,
+h2,
+h3,
+.home-link {
+    color: #4c4c4c;
+    margin: 0;
+}
+
+h1,
+.home-link {
+    font-size: 2.074em;
+}
+
+h2 {
+    font-size: 1.728em;
+}
+
+h2 {
+    font-size: 1.44em;
+}
+
+h1 a,
+h2 a,
+h3 a,
+.home-link {
+    color: #5E412F;
+}
+
+/*
+ * Links
+ * =====
+ */
+ a {
+     color: #F07818;
+     fill: #F07818;
+ }
+
+ a:hover {
+    color: #F0A830;
+ }
+
+
+/*
+ * Header
+ * ======
+ */
+header {
+    padding-top: 1em;
+    text-align: center;
+}
+
+.home-link {
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.home-link {
+    text-decoration: none;
+    display: inline-block;
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+    transition-duration: 0.3s;
+}
+
+.home-link:hover {
+    transform: translateY(-10px);
+}
+
+.home-link:hover:after {
+    content: '> Back to Home';
+    font-size: .3em;
+    display: block;
+    position: absolute;
+}
+
+header ul {
+    list-style-type: none;
+    padding: 20px 0;
+    margin-top: 0;
+}
+
+header li {
+    display: inline;
+}
+
+header li:not(:first-child) {
+    margin-left: 10px;
+}
+
+/*
+ * Main
+ * =====
+ */
+#main-content {
+    text-align: center;
+    margin: 20px auto;
+}
+
+
+/*
+ * Cards
+ * =====
+ */
+.card {
+    background: #f2f2f2;
+    border-radius: 5px;
+    display: block;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.card.img {
+    margin-top: 75px;
+    display: flex;
+    align-items: center;
+}
+
+.card img {
+    max-width: 150px;
+    margin-top: -75px;
+    border-radius: 100%;
+    border: 6px solid #f2f2f2;
+}
+
+.card--with-link {
+    position: relative;
+}
+
+.card--with-link:hover {
+    background: #f5f5f5;
+}
+
+.card--with-link:before {
+    position: absolute;
+    font-size: 50px;
+    content: '⇒';
+    right: -10px;
+    top: -40px;
+}
+
+@media (max-width: 767px) {
+    .card--with-link:before {
+        right: 0;
+    }
+}
+
+/*
+ * Social Media Icons
+ * ==================
+ */
+
+svg {
+     display: inline-block;
+     width: 40px;
+ }
